@@ -6,6 +6,8 @@ import time
 import datetime
 import subprocess
 
+import syslog
+
 from face import Face
 
 if __name__ == '__main__':
@@ -54,37 +56,44 @@ class Daemon:
             fd.write(str(pid))
             fd.close()
 
-
+        syslog.openlog( 'Facedetect', 0, syslog.LOG_LOCAL4 )
         self.face = Face(debug)
 
 
     def run(self):
-        while(self.need_break is False):
-            time.sleep(1)
-        # отключаем таймер
-        signal.setitimer(signal.ITIMER_REAL, 0)
-        # удаляю pid-файл
-        os.remove(self.pid_file)
+        try:
+            while(self.need_break is False):
+                time.sleep(1)
+            # отключаем таймер
+            signal.setitimer(signal.ITIMER_REAL, 0)
+            # удаляю pid-файл
+            os.remove(self.pid_file)
+        except Exception as e:
+            syslog.syslog( '=== %s ===' % str(e) )
 
     def process_alarm_signal(self):
-        if self.is_exit_alarm == 1:
-            return;
+        try:
+            if self.is_exit_alarm == 1:
+                return;
 
-        self.is_exit_alarm = 1
-        print '{} - alarm_checking'.format(datetime.datetime.now())
-        
-        is_face = self.face.read()
-        if is_face is False:
-            self.time += self.timer
-            if self.time > self.time_out:
-                # гашу дисплей
-                subprocess.call('xset dpms force off', shell=True)
-                print("OUT %d" % self.time)
+            self.is_exit_alarm = 1
+            print '{} - alarm_checking'.format(datetime.datetime.now())
+            
+            is_face = self.face.read()
+            if is_face is False:
+                self.time += self.timer
+                if self.time > self.time_out:
+                    # гашу дисплей
+                    subprocess.call('xset dpms force off', shell=True)
+                    print("OUT %d" % self.time)
+                else:
+                    print("No face %d" % self.time)
             else:
-                print("No face %d" % self.time)
-        else:
-            self.time = 0
-            subprocess.call('xset dpms force on', shell=True)
-            print('Yes face %d' % self.time)
+                self.time = 0
+                subprocess.call('xset dpms force on', shell=True)
+                print('Yes face %d' % self.time)
 
-        self.is_exit_alarm = 0
+            self.is_exit_alarm = 0
+        except Exception as e:
+            self.is_exit_alarm = 0
+            syslog.syslog( '=== %s ===' % str(e) )

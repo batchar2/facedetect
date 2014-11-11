@@ -593,4 +593,103 @@ removed from your working tree are ignored with this version of Git.
 
 Run 'git status' to check the paths you removed from your working tree.
 
-[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git 
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'faces.py' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   Main.py[m
+	[32mmodified:   daemon.py[m
+	[32mnew file:   daemon.pyc[m
+	[32mmodified:   face.py[m
+	[32mnew file:   face.pyc[m
+	[32mmodified:   screenlog.0[m
+	[32mmodified:   work.py[m
+	[32mnew file:   work.pyc[m
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mdeleted:    faces.py[m
+	[31mdeleted:    mydaemon.py[m
+
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git commit -m ""П"о"л"н"о"ц"е"н"ы"й" "д"е"м"о"н"[C[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git commit -m "Полноценый демон"
+[master e398e34] Полноценый демон
+ 8 files changed, 509 insertions(+), 16 deletions(-)
+ create mode 100644 daemon.pyc
+ create mode 100644 face.pyc
+ create mode 100644 work.pyc
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git push
+]warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': skokovstanislav
+Password for 'https://]skokovstanislav@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/skokovstanislav/facedetect.git/'
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': skokovstanisa lav
+Password for 'https://skokovstanislav@github.com': 
+Counting objects: 16, done.
+Delta compression using up to 2 threads.
+Compressing objects:  10% (1/10)   Compressing objects:  20% (2/10)   Compressing objects:  30% (3/10)   Compressing objects:  40% (4/10)   Compressing objects:  50% (5/10)   Compressing objects:  60% (6/10)   Compressing objects:  70% (7/10)   Compressing objects:  80% (8/10)   Compressing objects:  90% (9/10)   Compressing objects: 100% (10/10)   Compressing objects: 100% (10/10), done.
+Writing objects:  10% (1/10)   Writing objects:  20% (2/10)   Writing objects:  30% (3/10)   Writing objects:  40% (4/10)   Writing objects:  50% (5/10)   Writing objects:  60% (6/10)   Writing objects:  70% (7/10)   Writing objects:  80% (8/10)   Writing objects:  90% (9/10)   Writing objects: 100% (10/10)   Writing objects: 100% (10/10), 8.18 KiB | 0 bytes/s, done.
+Total 10 (delta 4), reused 0 (delta 0)
+To https://github.com/skokovstanislav/facedetect.git
+   939f8ff..e398e34  master -> master
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git pushcommit -m "Полноценый демон"status[K[1Padd .python Main.py -c start[14Pgit add .

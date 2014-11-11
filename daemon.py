@@ -21,7 +21,6 @@ class SignalHandler:
         self.target.process_alarm_signal()
 
     def handle_sigterm(self, signum, frame):
-        print("Sigterm")
         self.target.need_break = True
 
 class Daemon:
@@ -77,7 +76,8 @@ class Daemon:
                 return;
 
             self.is_exit_alarm = 1
-            print '{} - alarm_checking'.format(datetime.datetime.now())
+            if self.debug:
+                print '{} - alarm_checking'.format(datetime.datetime.now())
             
             is_face = self.face.read()
             if is_face is False:
@@ -85,13 +85,15 @@ class Daemon:
                 if self.time > self.time_out:
                     # гашу дисплей
                     subprocess.call('xset dpms force off', shell=True)
-                    print("OUT %d" % self.time)
-                else:
+                    if self.debug:
+                        print("OUT %d" % self.time)
+                elif self.debug:
                     print("No face %d" % self.time)
             else:
                 self.time = 0
                 subprocess.call('xset dpms force on', shell=True)
-                print('Yes face %d' % self.time)
+                if self.debug:
+                    print('Yes face %d' % self.time)
 
             self.is_exit_alarm = 0
         except Exception as e:

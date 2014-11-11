@@ -1,5 +1,3 @@
-
-#!/bin/python2
 # -*- coding: utf-8 -*-
 
 __author__ = "Skokov Stanislav"
@@ -9,33 +7,36 @@ import os
 import sys
 import getopt
 
-import mydaemon
+from work import Work
 
 DAEMON_START = 0
 DAEMON_STOP  = 1
 DAEMON_RESTART = 2
 
-def deamon_command(com):
-    if com == DAEMON_START:
-        mydaemon.start()
-    elif com == DAEMON_STOP:
-        mydaemon.stop()
-    elif com == DAEMON_RESTART:
-        mydaemon.start()
-        mydaemon.stop()
+
+PID_FILE = '/tmp/facedetect.pid'
+
+def deamon_command(command, timer, debug, time_out, is_daemon):
+    wk = Work(timer=timer, pid_file=PID_FILE, debug=debug, time_out=time_out, is_daemon=is_daemon)
+    if command == DAEMON_START:
+        wk.start()
+    elif command == DAEMON_STOP:
+        wk.stop()
+    elif command == DAEMON_RESTART:
+        wk.start()
+        wk.stop()
 
 
 if __name__ == '__main__':
     commands = [ 'start', 'stop', 'restart']
-    
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'c:h', ['command', 'help'])
+        opts, args = getopt.getopt(sys.argv[1:], 'o:t:c:hrd', ['command', 'help'])
     except getopt.GetoptError as err:
         print str(err)
         usage()
         sys.exit(2)
 
-    command = -1
+    command, timer, debug, time_out, is_daemon = -1, 3, False, 10, False
 
     for o, a in  opts:
         if o in ('-c', '--command'):
@@ -45,6 +46,18 @@ if __name__ == '__main__':
         elif o in ('-h', '--help'):
             usage()
             sys.exit()
+        # время вызова таймера
+        elif o == '-t':
+            timer = int(a)
+        #  демонизировать
+        elif o == '-d':
+            is_daemon = True
+        # дебаг
+        elif o == '-r':
+            debug = True
+        # промежуток в течении которого пользователь может уходить
+        elif o == '-o':
+            time_out = int(a)
         else:
             assert False, "unhandled option"
     
@@ -52,5 +65,5 @@ if __name__ == '__main__':
         print("Not command!")
         sys.exit(2)
 
-    deamon_command(command)
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
     print commands[command]

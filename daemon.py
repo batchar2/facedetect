@@ -61,8 +61,12 @@ class Daemon:
 
     def run(self):
         try:
-            while(self.need_break is False):
-                time.sleep(1)
+            syslog.syslog( '=== %s ===' % 'Start' )
+            while self.need_break is False:
+                pass
+                #time.sleep(1)
+
+            syslog.syslog( '=== %s ===' % 'Exit' )
             # отключаем таймер
             signal.setitimer(signal.ITIMER_REAL, 0)
             # удаляю pid-файл
@@ -72,7 +76,7 @@ class Daemon:
 
     def process_alarm_signal(self):
         try:
-            if self.is_exit_alarm == 1:
+            if self.is_exit_alarm == 1 or self.need_break is True:
                 return;
 
             self.is_exit_alarm = 1

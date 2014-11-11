@@ -2,7 +2,6 @@
 
 __author__ = "Skokov Stanislav"
 
-
 import os
 import sys
 import getopt
@@ -36,7 +35,7 @@ if __name__ == '__main__':
         usage()
         sys.exit(2)
 
-    command, timer, debug, time_out, is_daemon = -1, 2, False, 60, True
+    command, timer, debug, time_out, is_daemon = -1, 1, False, 60, True
 
     for o, a in  opts:
         if o in ('-c', '--command'):

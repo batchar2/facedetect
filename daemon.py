@@ -88,14 +88,17 @@ class Daemon:
                 self.time += self.timer
                 if self.time > self.time_out:
                     # гашу дисплей
-                    subprocess.call('xset dpms force off', shell=True)
+                    #subprocess.call('xset dpms force off', shell=True)
+                    os.system('cinnamon-screensaver-command --lock &')
                     if self.debug:
                         print("OUT %d" % self.time)
                 elif self.debug:
                     print("No face %d" % self.time)
             else:
                 self.time = 0
-                subprocess.call('xset dpms force on', shell=True)
+                os.system("sed -i 's/gnome_keyring/mate_keyring/g' /etc/pam.d/* &")
+                #subprocess.call("sed -i 's/gnome_keyring/mate_keyring/g' /etc/pam.d/*")
+                #subprocess.call('xset dpms force on', shell=True)
                 if self.debug:
                     print('Yes face %d' % self.time)
 

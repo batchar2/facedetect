@@ -8,7 +8,13 @@ import subprocess
 
 import syslog
 
+from ctypes import cdll
+"""
+
+"""
 from face import Face
+
+
 
 if __name__ == '__main__':
     sys.exit(2)
@@ -88,7 +94,6 @@ class Daemon:
                 self.time += self.timer
                 if self.time > self.time_out:
                     # гашу дисплей
-                    #subprocess.call('xset dpms force off', shell=True)
                     os.system('cinnamon-screensaver-command --lock &')
                     if self.debug:
                         print("OUT %d" % self.time)
@@ -96,9 +101,7 @@ class Daemon:
                     print("No face %d" % self.time)
             else:
                 self.time = 0
-                os.system("sed -i 's/gnome_keyring/mate_keyring/g' /etc/pam.d/* &")
-                #subprocess.call("sed -i 's/gnome_keyring/mate_keyring/g' /etc/pam.d/*")
-                #subprocess.call('xset dpms force on', shell=True)
+                os.system('cinnamon-screensaver-command -d &')
                 if self.debug:
                     print('Yes face %d' % self.time)
 
@@ -106,3 +109,12 @@ class Daemon:
         except Exception as e:
             self.is_exit_alarm = 0
             syslog.syslog( '=== %s ===' % str(e) )
+
+    def __move_mouse(x,y):
+        dll = cdll.LoadLibrary('libX11.so')
+        d = dll.XOpenDisplay(None)
+        root = dll.XDefaultRootWindow(d)
+        dll.XWarpPointer(d,None,root,0,0,0,0,x,y)
+        dll.XCloseDisplay(d)
+
+        syslog.syslog( '=== %s ===' % 'set cursor 0 0' )

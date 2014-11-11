@@ -5,6 +5,7 @@ __author__ = "Skokov Stanislav"
 import os
 import sys
 import getopt
+import time
 
 from work import Work
 
@@ -22,8 +23,9 @@ def deamon_command(command, timer, debug, time_out, is_daemon):
     elif command == DAEMON_STOP:
         wk.stop()
     elif command == DAEMON_RESTART:
-        wk.start()
         wk.stop()
+        time.sleep(3)
+        wk.start()
 
 
 if __name__ == '__main__':
@@ -32,7 +34,6 @@ if __name__ == '__main__':
         opts, args = getopt.getopt(sys.argv[1:], 'o:t:c:hpd', ['out', 'time', 'command', 'help', 'print', 'daemon'])
     except getopt.GetoptError as err:
         print str(err)
-        usage()
         sys.exit(2)
 
     command, timer, debug, time_out, is_daemon = -1, 1, False, 60, True

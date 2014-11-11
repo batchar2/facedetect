@@ -112,4 +112,485 @@ Untracked files:
 no changes added to commit
 [01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git commit -m "Тушение и поджаривание экрана - работает"add .[Kcommit -m "Тушение и поджаривание экрана - работает"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus [K[8@rm screenlog.0[C[1@-[1@а[1@ [1P[1P[1@f[1@ 
 fatal: pathspec 'screenlog.0' did not match any files
-[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m 
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git rm -f screenlog.0 
+fatal: pathspec 'screenlog.0' did not match any files
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git rm -f screenlog.0 commit -m "Тушение и поджаривание экрана - работает"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[K
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'faces.py' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git add .rm -f screenlog.0 commit -m "Тушение и поджаривание экрана - работает"
+[master 939f8ff] Тушение и поджаривание экрана - работает
+ 6 files changed, 24662 insertions(+), 15 deletions(-)
+ create mode 100644 daemon.py
+ create mode 100644 face.py
+ create mode 100644 haar.xml
+ create mode 100644 screenlog.0
+ create mode 100644 work.py
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': skokovstanisalv
+Password for 'https://skokovstanisalv@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/skokovstanislav/facedetect.git/'
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': skokovstanislav
+Password for 'https://skokovstanislav@github.com': 
+Counting objects: 10, done.
+Delta compression using up to 2 threads.
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:  12% (1/8)   Writing objects:  25% (2/8)   Writing objects:  37% (3/8)   Writing objects:  50% (4/8)   Writing objects:  62% (5/8)   Writing objects:  75% (6/8)   Writing objects:  87% (7/8)   Writing objects: 100% (8/8)   Writing objects: 100% (8/8), 100.42 KiB | 0 bytes/s, done.
+Total 8 (delta 0), reused 0 (delta 0)
+To https://github.com/skokovstanislav/facedetect.git
+   77ee96f..939f8ff  master -> master
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git status 
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mdeleted:    faces.py[m
+	[31mdeleted:    mydaemon.py[m
+	[31mmodified:   screenlog.0[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git status [3Ppushcommit -m "Тушение и поджаривание экрана - работает"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[Krm -f screenlog.0 commit -m "Тушение и поджаривание экрана - работает"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd .[Kcommit -m "Тушение и поджаривание экрана - работает"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cstatus [K[8@rm screenlog.0[C[9Pstatus[1Padd .ls[Ksudo rm screenlog.0 [5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7P*.pycpython Main.py -c start -t1 -o60 -r[Kd[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d[Kr
+HIGHGUI ERROR: V4L/V4L2: VIDIOC_S_CROP
+2014-11-11 19:47:07.686472 - alarm_checking
+1
+2014-11-11 19:47:09.686506 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:10.686548 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:11.686520 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:12.686418 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:13.686452 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:14.686580 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:15.686545 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:16.686518 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:17.686462 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:18.686483 - alarm_checking
+^CTraceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 22, in deamon_command
+    wk.start()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 32, in start
+    dm.run()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 63, in run
+    time.sleep(1)
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 19, in handle_sigalarm
+    self.target.process_alarm_signal()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 76, in process_alarm_signal
+    is_face = self.face.read()
+  File "/home/bat/apps/linux/display-power-opencv/face.py", line 41, in read
+    is_face = self.__detect(frame)
+  File "/home/bat/apps/linux/display-power-opencv/face.py", line 27, in __detect
+    print is_face
+KeyboardInterrupt
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -r[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -r
+HIGHGUI ERROR: V4L/V4L2: VIDIOC_S_CROP
+2014-11-11 19:47:53.078413 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:56.078266 - alarm_checking
+True
+OK! 0
+2014-11-11 19:47:58.078450 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:00.078326 - alarm_checking
+1
+2014-11-11 19:48:02.078386 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:04.078420 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:06.078376 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:08.078483 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:10.078477 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:12.078350 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:14.078318 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:16.078295 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:18.078476 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:20.078418 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:22.078342 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:24.078448 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:26.078446 - alarm_checking
+True
+OK! 0
+2014-11-11 19:48:28.078310 - alarm_checking
+True
+OK! 0
+^CTraceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 22, in deamon_command
+    wk.start()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 32, in start
+    dm.run()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 63, in run
+    time.sleep(1)
+KeyboardInterrupt
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -r[Kd[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d
+Error: daemon running!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/
+facedetect.pid               mc-bat/                      plugtmp/                     .X0-lock                     
+.ICE-unix/                   mintUpdate/                  pulse-PKdhtXMmr18n/          .X11-unix/                   
+LW01_InstallOpenCV_text.pdf  orbit-bat/                   ssh-ZavIYgGQ7qFo/            
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/facedetect.pid 
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/facedetect.pid python Main.py -c start -t1 -o60 -d[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d[Kpython Main.py -c start -t1 -o60 -d[12Prm /tmp/facedetect.pid 
+rm: cannot remove ‘/tmp/facedetect.pid’: No such file or directory
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/facedetect.pid python Main.py -c start -t1 -o60 -d[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -d[Kr
+HIGHGUI ERROR: V4L/V4L2: VIDIOC_S_CROP
+2014-11-11 19:51:52.033341 - alarm_checking
+True
+OK! 0
+2014-11-11 19:51:55.033427 - alarm_checking
+True
+OK! 0
+2014-11-11 19:51:57.033369 - alarm_checking
+True
+OK! 0
+2014-11-11 19:51:59.033374 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:01.033348 - alarm_checking
+1
+2014-11-11 19:52:03.033298 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:05.033382 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:07.033361 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:09.033336 - alarm_checking
+1
+2014-11-11 19:52:11.033274 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:13.033323 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:15.033660 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:17.033345 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:19.033355 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:21.033481 - alarm_checking
+True
+OK! 0
+2014-11-11 19:52:23.034110 - alarm_checking
+^CTraceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 22, in deamon_command
+    wk.start()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 32, in start
+    dm.run()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 63, in run
+    time.sleep(1)
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 19, in handle_sigalarm
+    self.target.process_alarm_signal()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 76, in process_alarm_signal
+    is_face = self.face.read()
+  File "/home/bat/apps/linux/display-power-opencv/face.py", line 44, in read
+    is_face = self.__detect(frame)
+  File "/home/bat/apps/linux/display-power-opencv/face.py", line 27, in __detect
+    print is_face
+KeyboardInterrupt
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -r;[K[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o60 -r[1P[1@2
+HIGHGUI ERROR: V4L/V4L2: VIDIOC_S_CROP
+2014-11-11 19:53:17.582689 - alarm_checking
+Yes face 0
+2014-11-11 19:53:20.582691 - alarm_checking
+No face 1
+2014-11-11 19:53:22.582629 - alarm_checking
+Yes face 0
+2014-11-11 19:53:24.582688 - alarm_checking
+Yes face 0
+2014-11-11 19:53:26.582693 - alarm_checking
+Yes face 0
+2014-11-11 19:53:28.582672 - alarm_checking
+Yes face 0
+2014-11-11 19:53:30.582692 - alarm_checking
+Yes face 0
+2014-11-11 19:53:32.582674 - alarm_checking
+Yes face 0
+2014-11-11 19:53:34.582667 - alarm_checking
+Yes face 0
+2014-11-11 19:53:36.582706 - alarm_checking
+Yes face 0
+2014-11-11 19:53:38.582641 - alarm_checking
+Yes face 0
+2014-11-11 19:53:40.582713 - alarm_checking
+No face 1
+2014-11-11 19:53:42.582664 - alarm_checking
+No face 2
+2014-11-11 19:53:44.582676 - alarm_checking
+No face 3
+2014-11-11 19:53:46.582639 - alarm_checking
+No face 4
+2014-11-11 19:53:48.582583 - alarm_checking
+No face 5
+2014-11-11 19:53:50.582632 - alarm_checking
+No face 6
+2014-11-11 19:53:52.582621 - alarm_checking
+No face 7
+2014-11-11 19:53:54.582586 - alarm_checking
+No face 8
+2014-11-11 19:53:56.582635 - alarm_checking
+No face 9
+2014-11-11 19:53:58.582640 - alarm_checking
+No face 10
+2014-11-11 19:54:00.582682 - alarm_checking
+No face 11
+2014-11-11 19:54:02.582630 - alarm_checking
+No face 12
+2014-11-11 19:54:04.582635 - alarm_checking
+No face 13
+2014-11-11 19:54:06.582662 - alarm_checking
+No face 14
+2014-11-11 19:54:08.582665 - alarm_checking
+No face 15
+2014-11-11 19:54:10.582684 - alarm_checking
+No face 16
+2014-11-11 19:54:12.582661 - alarm_checking
+No face 17
+2014-11-11 19:54:14.582630 - alarm_checking
+No face 18
+2014-11-11 19:54:16.582660 - alarm_checking
+No face 19
+2014-11-11 19:54:18.582632 - alarm_checking
+No face 20
+2014-11-11 19:54:20.582662 - alarm_checking
+OUT 21
+2014-11-11 19:54:23.582707 - alarm_checking
+OUT 22
+2014-11-11 19:54:25.582668 - alarm_checking
+Yes face 0
+2014-11-11 19:54:28.582651 - alarm_checking
+Yes face 0
+2014-11-11 19:54:30.582664 - alarm_checking
+Yes face 0
+2014-11-11 19:54:32.582694 - alarm_checking
+Yes face 0
+2014-11-11 19:54:34.582685 - alarm_checking
+Yes face 0
+2014-11-11 19:54:36.582644 - alarm_checking
+^CTraceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 22, in deamon_command
+    wk.start()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 32, in start
+    dm.run()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 63, in run
+    time.sleep(1)
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 19, in handle_sigalarm
+    self.target.process_alarm_signal()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 88, in process_alarm_signal
+    print('Yes face %d' % self.time)
+KeyboardInterrupt
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -r[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -r[Kd
+Traceback (most recent call last):
+  File "Main.py", line 10, in <module>
+    from work import Work
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 39
+    os.kill(pid, signal.SIGUSR1)))
+                                ^
+SyntaxError: invalid syntax
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kstop
+Traceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 24, in deamon_command
+    wk.stop()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 37, in stop
+    fd =open(pid_file, 'r')
+NameError: global name 'pid_file' is not defined
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop
+stop
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stopart -t1 -o20 -d[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d
+Error: daemon running!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -dop[K
+Traceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 24, in deamon_command
+    wk.stop()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 40, in stop
+    os.kill(pid, signal.SIGUSR1)
+OSError: [Errno 3] No such process
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/python Main.py -c stop[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpyt[K[K[Kpython Main.py -c start -t1 -o20 -dop[Kart -t1 -o20 -dr6[C[C[C[Cd[12Prm /tmp/facedetect.pid python Main.py -c start -t1 -o60 -d[12Prm /tmp/facedetect.pid 
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m rm /tmp/facedetect.pid [Kpython Main.py -c start -t1 -o20 -d[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -t1 -o20 -d[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kop
+Stopend daemon!
+stop
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop
+Not runing daemon!
+stop
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop
+Not runing daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[K[Kart
+HIGHGUI ERROR: V4L/V4L2: VIDIOC_S_CROP
+2014-11-11 20:01:50.082649 - alarm_checking
+Yes face 0
+2014-11-11 20:01:53.082693 - alarm_checking
+Yes face 0
+2014-11-11 20:01:56.082579 - alarm_checking
+Yes face 0
+^CTraceback (most recent call last):
+  File "Main.py", line 68, in <module>
+    deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
+  File "Main.py", line 22, in deamon_command
+    wk.start()
+  File "/home/bat/apps/linux/display-power-opencv/work.py", line 34, in start
+    dm.run()
+  File "/home/bat/apps/linux/display-power-opencv/daemon.py", line 63, in run
+    time.sleep(1)
+KeyboardInterrupt
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m [H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start[K[K[Kop
+Stopend daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stopart
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m [H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start[1Pop
+Stoped daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stopart[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start[K[K[K[K[K[K[Kh
+Traceback (most recent call last):
+  File "Main.py", line 47, in <module>
+    usage()
+NameError: name 'usage' is not defined
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -h[Kc stop
+Stoped daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop
+Not runing daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[K[Kart
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start[Kpython Main.py -c start[1Pop
+Stoped daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stopart -p
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c start -p[K[K[K[K[K[Kop
+Stoped daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[H[J[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop
+Not runing daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m python Main.py -c stop[K[Kart
+Runign daemon!
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git add .
+warning: You ran 'git add' with neither '-A (--all)' or '--ignore-removal',
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like 'faces.py' that are
+removed from your working tree are ignored with this version of Git.
+
+* 'git add --ignore-removal <pathspec>', which is the current default,
+  ignores paths you removed from your working tree.
+
+* 'git add --all <pathspec>' will let you also record the removals.
+
+Run 'git status' to check the paths you removed from your working tree.
+
+[01;32mbat@bat[01;34m ~/apps/linux/display-power-opencv $[00m git 

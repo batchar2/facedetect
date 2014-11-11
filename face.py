@@ -24,7 +24,6 @@ class Face:
         is_face = False
         for (x, y, w, h) in faces:
             is_face = True
-            print is_face
             cv2.rectangle(image, (x*5, y*5), ( (x+w)*5, (y+h)*5 ), (0, 0, 255), 2)
 
         if self.debug is True:
@@ -34,10 +33,13 @@ class Face:
         return is_face
 
     def read(self):
-        i = 30
-        while i:
-            _, frame = self.camera.read()
-            i -= 1
+        try:
+            i = 50
+            while i:
+                _, frame = self.camera.read()
+                i -= 1
+        except:
+            print('Error!')
         is_face = self.__detect(frame)
 
         return is_face

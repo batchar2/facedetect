@@ -81,10 +81,10 @@ class Daemon:
                 subprocess.call('xset dpms force off', shell=True)
                 print("OUT %d" % self.time)
             else:
-                print("%d" % self.time)
+                print("No face %d" % self.time)
         else:
             self.time = 0
             subprocess.call('xset dpms force on', shell=True)
-            print('OK! %d' % self.time)
+            print('Yes face %d' % self.time)
 
         self.is_exit_alarm = 0

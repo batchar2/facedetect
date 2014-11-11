@@ -30,13 +30,13 @@ def deamon_command(command, timer, debug, time_out, is_daemon):
 if __name__ == '__main__':
     commands = [ 'start', 'stop', 'restart']
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'o:t:c:hrd', ['command', 'help'])
+        opts, args = getopt.getopt(sys.argv[1:], 'o:t:c:hpd', ['out', 'time', 'command', 'help', 'print', 'daemon'])
     except getopt.GetoptError as err:
         print str(err)
         usage()
         sys.exit(2)
 
-    command, timer, debug, time_out, is_daemon = -1, 3, False, 10, False
+    command, timer, debug, time_out, is_daemon = -1, 2, False, 60, True
 
     for o, a in  opts:
         if o in ('-c', '--command'):
@@ -44,7 +44,10 @@ if __name__ == '__main__':
                 if a == commands[i]:
                     command = i
         elif o in ('-h', '--help'):
-            usage()
+            print '"-o <число>" Задает промежуток времени в течении которого происхоит ожидание пользователя'
+            print '"-t <число>" Интервал через который будет происходить идентификация'
+            print '"-d" Запустить как демон(по-умолчанию включен)'
+            print '"-p" Включить режим дебаг. Отображает изображение на экране.'
             sys.exit()
         # время вызова таймера
         elif o == '-t':
@@ -53,7 +56,7 @@ if __name__ == '__main__':
         elif o == '-d':
             is_daemon = True
         # дебаг
-        elif o == '-r':
+        elif o == '-p':
             debug = True
         # промежуток в течении которого пользователь может уходить
         elif o == '-o':
@@ -66,4 +69,3 @@ if __name__ == '__main__':
         sys.exit(2)
 
     deamon_command(command=command, timer=timer, debug=debug, time_out=time_out, is_daemon=is_daemon)
-    print commands[command]
